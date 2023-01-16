@@ -2,7 +2,8 @@
 import {ref} from 'vue'
 import { useUserStore } from '../store/userStore';
 import { toast } from 'vue3-toastify';
-import router from '../router'
+import {useRouter} from 'vue-router'
+const router = useRouter()
 const data = useUserStore();
     const name= ref("")
     const email= ref("")
@@ -106,7 +107,7 @@ const data = useUserStore();
       ) {
         let newUser = {
           name: name.value,
-          email:email:value,
+          email:email.value,
           telefone:telefone.value,
           img:img.value,
           country:country.value,
@@ -119,6 +120,7 @@ const data = useUserStore();
         console.log(newUser)
         toast.success(`Excellente user ${name.value} added!`)
         console.log('user', newUser)
+        router.push('/')
         
         return true;
       }
