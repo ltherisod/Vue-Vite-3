@@ -105,15 +105,15 @@ const data = useUserStore();
         country.value
       ) {
         let newUser = {
-          name,
-          email,
-          telefone,
-          img,
-          country,
-          address,
-          subscribe,
-          terms,
-          password,
+          name: name.value,
+          email:email:value,
+          telefone:telefone.value,
+          img:img.value,
+          country:country.value,
+          address:address.value,
+          subscribe:subscribe.value,
+          terms:terms.value,
+          password:password.value,
         };
         data.postUsers(newUser)
         console.log(newUser)
